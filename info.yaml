@@ -1,41 +1,45 @@
-# Tiny Tapeout project information (Wokwi project)
+# Tiny Tapeout project information
 project:
-  wokwi_id:     475558206586043393 # Set this to the ID of your Wokwi project (the number from the project's URL)
-  title:        "CHUA_IEEE_BootCamp2026"      # Project title
-  author:       "Hannelle Chua"      # Your name
-  discord:      "@hanwheee"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "based from Tiny Tapeout Wokwi Template"      # One line description of what your project does
-  language:     "Wokwi" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  title:        "Tiny Cyberdeck — Interactive VGA Logic Core"
+  author:       "Hannelle Chua"
+  discord:      "@hanwheee"
+  description:  "Interactive VGA cyberdeck controlled by four digital inputs"
+  language:     "Verilog"
+  clock_hz:     25000000
 
-  # How many tiles your design occupies? A single tile is about 167x108 uM.
-  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  # How many tiles your design occupies
+  tiles: "1x1"
 
+  # Top-level Verilog module
+  top_module: "tt_um_hannellechua_tiny_cyberdeck"
 
-# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
-# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+  # Verilog source files located in ./src
+  source_files:
+    - "project.v"
+
+# Pinout
 pinout:
   # Inputs
-  ui[0]: "IN0"
-  ui[1]: "IN1"
-  ui[2]: "IN2"
-  ui[3]: "IN3"
-  ui[4]: "IN4"
-  ui[5]: "IN5"
-  ui[6]: "IN6"
-  ui[7]: "IN7"
+  ui[0]: "CYBER INPUT 0"
+  ui[1]: "CYBER INPUT 1"
+  ui[2]: "CYBER INPUT 2"
+  ui[3]: "CYBER INPUT 3"
+  ui[4]: ""
+  ui[5]: ""
+  ui[6]: ""
+  ui[7]: ""
 
-  # Outputs
-  uo[0]: "OUT0"
-  uo[1]: "OUT1"
-  uo[2]: "OUT2"
-  uo[3]: "OUT3"
-  uo[4]: "OUT4"
-  uo[5]: "OUT5"
-  uo[6]: "OUT6"
-  uo[7]: "OUT7"
+  # VGA outputs
+  uo[0]: "VGA R1"
+  uo[1]: "VGA G1"
+  uo[2]: "VGA B1"
+  uo[3]: "VGA VSYNC"
+  uo[4]: "VGA R0"
+  uo[5]: "VGA G0"
+  uo[6]: "VGA B0"
+  uo[7]: "VGA HSYNC"
 
-  # Bidirectional pins
+  # Bidirectional pins unused
   uio[0]: ""
   uio[1]: ""
   uio[2]: ""
